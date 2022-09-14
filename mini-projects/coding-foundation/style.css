@@ -1,0 +1,29 @@
+html,
+body {
+  margin: 0;
+  background-color: green;
+}
+
+.texts {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 100px;
+}
+  
+.textDeco{
+  color: white;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+#FrogArea {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.NewNumber{
+  border-radius: 5px;
+  margin-left: 10px;
+  border-color:white;
+}
