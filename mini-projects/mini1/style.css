@@ -1,0 +1,63 @@
+
+body{
+    background-color: rgb(0, 0, 255);
+}
+p{
+    color: white;
+    font-size: 2;
+}
+.letterrain{
+    -webkit-transition:all 4s ease-in;
+    transition:all 4s ease-in;
+    display:inline-block;
+}
+
+#rain{
+   margin:3em 1em;
+   text-transform: uppercase;
+ white-space:pre;
+ letter-spacing: 4px;
+ height: fit-content;
+ width: fit-content;
+}
+
+.fall{
+    -webkit-transform:translateY(40vh);
+    transform:translateY(40vh);
+    flex-wrap: wrap;
+
+}
+#answer{
+    display: none;
+    height: fit-content;
+    width: fit-content;
+    letter-spacing: 2px;
+    margin-left: 3em;
+    position: absolute;
+    top:55%;
+
+
+}
+#question{
+    display: none;
+    cursor: pointer;
+    font-size: 10em;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    left: 60vw;
+    top: 14vh;
+    text-decoration: underline;
+    transform:rotate(0deg);
+    transition: all 5s;
+}
+
+.container{
+display: flex;
+flex-direction: column;
+
+}
+
+.normalfly{
+    cursor: pointer;
+}
