@@ -49,14 +49,40 @@ document.getElementById('answer').innerHTML=flyString;
 let flyClass = document.getElementsByClassName("normalans");
 
 let flies = document.querySelectorAll('.normalans');
-let elementClicked = false;
+// let clickstatus = new Array(0).fill(false);
+
+function addNew(){
+    let conX = Math.random() * (window.innerWidth/1.1);
+    let conY = Math.random() * (window.innerHeight/1.1);
+const newContent = document.createElement("p");
+const node = document.createTextNode("💧");
+newContent.appendChild(node);
+document.body.appendChild(newContent);
+newContent.style.position = "absolute";
+newContent.style.top =conY+ 'px';
+newContent.style.left = conX+ 'px';
+newContent.style.fontSize ="2 rem";
+console.log(conX,conY);
+}
 
 flies.forEach(normalans => {
   normalans.addEventListener('click', function move(event) {
   normalans.style.color = "yellow";
   normalans.style.fontSize = "3em";
-  elementClicked = true;
+  addNew();
+  
+//   clickstatus.push(true);
   } )
 })
+
+
+// console.log(clickstatus.length);
+// if(clickstatus.length >= 1){
+//     let wat = document.getElementById('water');
+//     wat.style.display = "block";
+// }
+
+
+
 
 

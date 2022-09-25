@@ -58,6 +58,9 @@ flex-direction: column;
 
 }
 
-.normalfly{
+.normalans{
     cursor: pointer;
+}
+#water{
+    display: none;
 }
