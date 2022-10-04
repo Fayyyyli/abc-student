@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+  }
+body{
+    background: linear-gradient(white, rgb(255, 208, 216));
+}
+
+.box{
+    width:150px;
+    height: 150px;
+    position: fixed;
+    top:0;
+    left:0;
+    transition: transform 2s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+@keyframes horn{
+    0%{
+        border-radius: 50%;
+    }
+    50%{
+        border-radius: 10%;
+    }
+    100%{
+        border-radius: 50%;
+    }
+}
+
+.container{
+    /* border:black solid 2px; */
+    width:fit-content;
+    margin-left: 3%;
+    padding: 30px;
+    border-right:white solid 6px;
+    border-radius: 10%;
+}
+p{
+    color:navy;
+}
