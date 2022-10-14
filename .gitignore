@@ -15,7 +15,9 @@
 # the "**" means that it does not matter where in your 
 # project the ignore-this folder shows up, 
 # it will always be ignored
-
+*.key
+*.crt
+.vscode
 ------
 
 
