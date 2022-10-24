@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "NoLinks",
+  "version": "1.0",
+  "description": "No (too many) links",
+  "content_scripts": [
+    {
+  
+      "js": [
+        "content.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+      
+    }
+  ],
+
+  "action": {
+    "default_icon": "bug.png",
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
