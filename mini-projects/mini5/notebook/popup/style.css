@@ -1,0 +1,9 @@
+input{
+    display: inline;
+  }
+  
+  body{
+    margin:20px;
+    width: 400px;
+    font-size: large;
+  }

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "notebook",
+  "version": "1.0",
+  "description": "a notebook",
+ "background": {
+  "service_worker": "background.js"
+},
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup/popup.html"
+  },
+  "icons": {
+
+    "16": "icon.png"
+
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus",
+    "storage"
+  ]
+}
