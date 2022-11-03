@@ -80,7 +80,8 @@ for (let i = 0; i < tags.length; i++) {
                     
                       setTimeout(()=>{
                         tongue.style.width=tongueLength+"px"
-                        liz.style.left="10px"
+                        liz.style.left="10px";
+                        tags[i].style.color = "red";
                       },500)
                       setTimeout(()=>{
                         tongue.style.marginLeft="0px"
