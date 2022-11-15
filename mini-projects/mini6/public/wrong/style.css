@@ -1,0 +1,70 @@
+html{
+  background-color: rgb(226, 54, 27);
+  color: blanchedalmond;
+}
+
+h1{
+  font-size: 5em;
+  margin-left: 10%;
+  margin-top: 10%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 5%;
+}
+
+p{
+  font-size: 1em;
+  margin-left: 15%;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button{
+  background-color: transparent;
+  color: blanchedalmond;
+  border-radius: 7px;
+  border-color: blanchedalmond;
+  cursor: pointer;
+}
+
+input[type=text]
+{
+    height: 15px;
+    border-color: blanchedalmond;
+    color: rgb(226, 54, 27);
+    border-radius: 5px;
+    margin-left: 12%;
+    /* background-color: rgb(226, 54, 27); */
+}
+#try{
+  font-size: 2em;
+  margin-top: 15%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#button3{
+  border: none;
+  font-size: 1.4em;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-left: 40%;
+  margin-top: 3%;
+  transition: 0.3s;
+}
+#button3:hover{
+text-decoration: underline;
+scale: 1.1;
+}
+
+
+#container{
+  margin-top: 10%;
+margin-left: 35%;
+}
+
+#ket{
+  font-size: 2.3em;
+  text-decoration: underline;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+#bi{
+  font-size: 1.4em;
+  margin-bottom: 3em;
+}
+

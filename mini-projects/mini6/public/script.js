@@ -6,6 +6,9 @@ password.addEventListener("input",()=>{
   })
 
 button.addEventListener("click",()=>{
-    window.location.href="/entrance?password="+password.value;
+  let text = password.value;
+  let route = "/sendAnswer?answer="+text;
+  fetch(route);
+  window.location.href="/entrance?password="+password.value;
   })
 
