@@ -1,0 +1,109 @@
+:root{
+    --borderThickness: 1px;
+}
+
+
+body{
+    margin: 0;
+    /* font-weight: bold; */
+    font-family: sans-serif;
+    background-image: url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.chatwrapper{
+    width:330px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    padding: 3px;
+    padding-top: 30px;
+    box-shadow: 0 0 2px 2px rgb(36, 36, 36);
+    background-color: #0062EA 
+}
+
+.namebox{
+    border: var(--borderThickness) solid rgb(0, 0, 0);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    text-align: right;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: rgb(236,233,218);
+    display: flex;
+    justify-content: left;
+}
+
+.chatbox{
+    border: var(--borderThickness) solid rgb(0, 0, 0);;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: rgb(236,233,218);
+}
+
+
+#chat{
+    height: 200px;
+    overflow: scroll;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+#chat li{
+    padding: 3px;
+    /* margin-bottom: 3px; */
+}
+
+#chat li:nth-child(odd){
+    color:  whitesmoke;
+    background-color:rgb(184,180,163);
+
+}
+#chat li .sender{
+    color:  #003399;
+}
+
+.messagebox{
+    border: var(--borderThickness) solid rgb(0, 0, 0);
+    padding: 10px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    justify-content: space-between;
+    display: flex;
+    background-color: rgb(236,233,218);
+}
+
+#name{
+    font-size: 16px;
+    width: 100px;
+}
+
+#send{
+    border: 0.8px solid rgb(0, 0, 0);
+    font-size: 16px;
+    box-shadow: 2px 2px 2px rgb(50, 50, 50);
+    cursor:pointer;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#message{
+    font-size: 16px;
+    border: 1px solid rgb(0, 0, 0);
+    /* border-radius: 3px; */
+}
