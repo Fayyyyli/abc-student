@@ -25,7 +25,7 @@ p{
     height: 100vh;
 }
 .chatwrapper{
-    width:330px;
+    width:500px;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 3px;
     padding: 3px;
@@ -55,7 +55,7 @@ p{
 
 
 #chat{
-    height: 200px;
+    height: 300px;
     overflow: scroll;
     list-style: none;
     margin: 0;
@@ -90,6 +90,7 @@ p{
 #name{
     font-size: 16px;
     width: 100px;
+    text-align: center;
 }
 
 #send{

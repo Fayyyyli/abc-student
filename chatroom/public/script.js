@@ -38,8 +38,8 @@ socket.on("incoming",(data)=>{
 
 
 //https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
-messagebox.addEventListener("keyup",()=>{
-    if(KeyboardEvent.key === "Enter"){
-        sendbutton.click();
-    }
+messagebox.addEventListener("keyup",(event)=>{
+        if(event.key === "Enter"){
+            sendbutton.click();
+        }
 })
