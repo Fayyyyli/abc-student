@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-let collectedAnswer = [];
+let collectedAnswer = []
 
 app.use(express.static('public'));
 
@@ -19,7 +19,7 @@ app.get('/entrance', (req, res) => {
 
 app.get("/sendAnswer",(req,res)=>{
   let info = req.query;
-  let newAnswer = info.answer
+  let newAnswer = info.answer;
   collectedAnswer.push(newAnswer);
   console.log(collectedAnswer);
 })

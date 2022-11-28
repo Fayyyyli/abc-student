@@ -1,0 +1,163 @@
+:root{
+  --white: #ffffff;
+}
+
+html{
+  background: radial-gradient(circle, rgba(251,0,134,0.9150253851540616) 0%, rgba(70,216,252,1) 87%);
+}
+body{
+  margin: 0;
+  
+}
+
+#wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#buttonWrapper{
+padding-left: 10%;
+padding-right: 10%;
+width: 600px;
+flex-wrap: wrap;
+display: flex;
+border-left: #ffffff dashed 4px;
+border-right: #ffffff dashed 4px;
+z-index: 999;
+}
+
+#button2{
+  width: 100%;
+  display: flex;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  justify-content: center;
+}
+
+#inpu{
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: #ffffff;
+
+}
+#check{
+position: fixed;
+top: 85vh;
+  padding: 0;
+  margin: 0;
+  scale: 3;
+  accent-color: rgb(82, 206, 255);
+  transition: 3s;
+}
+/* #deco{
+  background-color: transparent;
+  border: #ffffff solid 2px;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  position: absolute;
+} */
+#textAll{
+  height: 20px;
+  width:150px;
+}
+#randomSingle{
+  margin-right: 10px;
+}
+button{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: auto;
+  width: auto;
+  padding: 7px;
+  background-color: transparent;
+  /* text-shadow:  0 0 4px var(--white); */
+  border: none;
+  font-size: 1.3em;
+  border-radius: 5px;
+  /* border: solid  2px var(--white);
+  box-shadow: 0 0 4px var(--white); */
+  cursor: pointer;
+  color: var(--white);
+  /* margin-right: 30px; */
+  transition: .5s;
+}
+
+input[type='checkbox'] {
+  width:30px;
+  height:30px;
+  cursor: pointer;
+}
+#rangeout{
+  z-index:3;
+  position: absolute;
+  border-radius: 50%;
+}
+#sendText{
+  border: #ffffff solid 2px;
+  border-radius: 3px;
+  font-size: 1em;
+  margin-left: 20px;
+}
+
+input[type="range"] {
+  margin-left: 40px;
+  margin-top: 60px;
+  -webkit-appearance: none;
+  width: 500px;
+  height: 10px;
+  border-radius: 2px;
+  background: white;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 25px;
+  width: 15px;
+  background: white;
+  cursor: ew-resize;
+  transition: background .3s ease-in-out;
+}
+
+
+
+.floating { 
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.pulse { 
+  animation-name: pulse;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  -5px); }
+  50%  { transform: translate(0, 5px); }
+  100%   { transform: translate(0, -5px); }   
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
