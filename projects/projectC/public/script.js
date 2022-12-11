@@ -1,4 +1,4 @@
-// let socket = io();
+let socket = io();
 let c1 = document.getElementById("c1");
 let c2 = document.getElementById("c2");
 let c3 = document.getElementById("c3");
