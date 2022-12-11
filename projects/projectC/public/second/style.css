@@ -12,6 +12,41 @@ p{
     font-size: 16px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+#hint{
+    color: #ffffff;
+    border: none;
+    background-color: transparent;
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    width: 90vw;
+    text-align: center;
+
+}
+#button{
+    color: #ffffff;
+    border: white solid 2px;
+    background-color: transparent;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 10px;   
+    padding-right: 10px;
+    box-shadow: 4px 4px  #212121;
+}
+#content{
+    flex-wrap: wrap;
+    border-radius: 10px;
+    top: 45vh;
+    display: flex;
+    width: 90vw;
+    margin-left: 5vw;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(255,255,255,0.3);
+}
 .wrapper{
     display: flex;
     justify-content: center;
@@ -156,6 +191,7 @@ p{
 .send_top:active{
    transform: translateY(0);
   }
+
 #message{
     width: 150px;
     padding: 5px;
