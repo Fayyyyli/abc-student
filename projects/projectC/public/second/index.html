@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+           <div id="test">
+                <div class="room" id="room">
+                        <div id="ppl"></div>
+                </div> 
+          </div>
+
+      <div id="chatwrapper">
+            <div class="chatbox"> 
+                    <ul id="chat">
+                    </ul>
+            </div> 
+      </div>
+
+      <div class="messagebox">
+        <div id="abox"></div>
+            <input autocomplete="off" type="text" id="message" placeholder="Type..."> 
+            <button id="send">
+                <span class="send_top"> SEND </span>
+           </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

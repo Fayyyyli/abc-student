@@ -1,39 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="/socket.io/socket.io.js"></script>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
     <title>Document</title>
 </head>
-
 <body>
-    <div class="wrapper">
-      
-        <div id="content">
-            <button id="button">button</button>
-        </div>
-           
-            <div class="room">
-                <div id="ppl"></div>
-            </div>
-            
-            
-            <div class="chatbox"> 
-                <!-- <ul id="chat">
-                </ul> -->
-            </div> 
-       
-            <!-- <div class="messagebox">
-                <input autocomplete="off" type="text" id="message" placeholder="Type..."> <button id="send">Send</button>
-            </div> -->
-    
+    <div id="content">
+        <button id="button">&lt; START &gt;</button>
     </div>
 
-    <script src="script.js"></script>
+    <div id="wrapper">
+        <p id="title">Choose Your Avatar</p>
+       
+        <div class="boxContainer">
+            <div class="box" id="c1"></div>
+            <div class="box" id="c2"></div>
+            <div class="box" id="c3"></div>
+            <div class="box" id="c4"></div>
+            <div class="box" id="c5"></div>
+            <div class="box" id="c6"></div>
+        </div>
+    </div>
+   <script src="script.js"></script>
 </body>
-
 </html>
