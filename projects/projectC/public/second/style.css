@@ -4,6 +4,7 @@ body{
     /* font-weight: bold; */
     font-family: sans-serif;
     background-color:#212121;
+    overflow:hidden;
 }
 
 p{
@@ -80,7 +81,7 @@ p{
     display: flex;
     align-items:center;
     justify-content: center;
-    margin-top: 15vh;
+    margin-top: 25vh;
     margin-bottom: 5vh;
 }
 
@@ -91,7 +92,6 @@ p{
     position: relative;
     border: 0;
     padding: 0;
-    background-color: aquamarine;
 }
 
 
@@ -124,17 +124,18 @@ p{
 
 }
 
-.messagebox{
+#messagebox{
     border: 2px solid rgb(251, 251, 251);
     width:75vw;
     padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 3px;
+    border-radius: 6px;
     justify-content: space-around;
     align-items: center;
     display: flex;
     margin-bottom: 10vh;
+    opacity:0;
 }
 
 #name{
@@ -156,10 +157,10 @@ p{
 
 #abox{
     border: none;
-    width: 30px;
-    height: 30px;
+    width: 0px;
+    height: 0px;
     margin-right: 5px;
-    opacity: 0;
+   border-radius: 3px;
 
 }
 
