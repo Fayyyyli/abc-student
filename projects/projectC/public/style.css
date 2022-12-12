@@ -2,6 +2,8 @@
 body{
     margin: 0;
     background-color: black;
+    background-color:#212121;
+    overflow:hidden;
 }
 
 #wrapper{
@@ -55,7 +57,7 @@ body{
     padding-bottom: 10vh;
     padding-inline-start: 10vw;
     padding-inline-end: 10vw;
-    width: 100vw;
+    width: 70vw;
     height: 45vh;
     display: flex;
     justify-content:space-around;

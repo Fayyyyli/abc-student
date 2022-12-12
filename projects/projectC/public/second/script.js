@@ -26,15 +26,15 @@ let brek;// = document.getElementById("breaksound");
 
 let cw = document.getElementById("chatwrapper");
 
-
+let endSta = false;
 let x = 0;
 let xSpeed = 0;
 let slipperyness = 2.9;
 
 let test = document.getElementById("test");
 let styleChange = document.createElement("style");
-let change1 = document.createTextNode('#test:before{ position: absolute;content:"";height: 0;width: 0;border: 8px solid transparent;box-sizing: border-box;bottom: 0;left: 0;animation: ak ease 1s forwards;}')
-let change2 = document.createTextNode('#test:after{ position: absolute;content:"";height: 0;width: 0;border: 8px solid transparent;box-sizing: border-box;top: 0;right: 0;animation: ab ease 1s forwards;}')
+let change1 = document.createTextNode('#test:before{ position: absolute;content:"";height: 0;width: 0;border: 8px solid transparent;box-sizing: border-box;bottom: 0;left: 0;animation: ak ease 1s forwards;z-index:0}')
+let change2 = document.createTextNode('#test:after{ position: absolute;content:"";height: 0;width: 0;border: 8px solid transparent;box-sizing: border-box;top: 0;right: 0;animation: ab ease 1s forwards;z-index:0 }')
 
 
 
@@ -90,65 +90,120 @@ function permission() {
 btn.addEventListener("click", permission);
 
 
+let _stop = false;
 let shakeInterval;
 let hitCount = 0;
 function startMovement() {
     shakeInterval = setInterval(() => {
         x += xSpeed;
-        if ((x + xSpeed) > 150) {
+
+        if (x >= 137) {
             // WE HIT THE WALL
-            
-            x = 150;
+            x = 137;
             xSpeed = 0;
-            if (rightReadyToPlay) {
-              
+            if (!_stop) {
+                _stop = true;
                 right[rightIdx].play();
                 rightIdx++;
                 if (rightIdx >= numSounds) {
                     rightIdx = 0;
                 }
-                rightReadyToPlay = false;
                 hitCount++;
-                if(hitCount> 5){
-                  endShaking();
-                  return
+                if (hitCount > 8) {
+                    endShaking();
+                    return
                 }
-            
             }
-            leftReadyToPlay = true;
-
-
-        } else if ((x + xSpeed) < -150) {
-            // WE HIT THE WALL
-            
-            x = -150;
+        } else if (x <= -137) {
+            x = -137;
             xSpeed = 0;
-            if (leftReadyToPlay) {
+            // WE HIT THE WALL
+            if (!_stop) {
+                _stop = true;
                 left[leftIdx].play();
                 leftIdx++;
+
                 if (leftIdx >= numSounds) {
                     leftIdx = 0;
                 }
-                leftReadyToPlay = false;
-
-              hitCount++;
-              if(hitCount> 5){
-                endShaking();
-                return
-              }
+                hitCount++;
+                if (hitCount > 8) {
+                    endShaking();
+                    return
+                }
             }
-            rightReadyToPlay = true;
-            
+        } else {
+            _stop = false;
         }
         ppl.style.left = x + "px";
     }, 10)
 }
+
+//original version. sounds from the same side can't be trigger in a row
+// function startMovement() {
+//     shakeInterval = setInterval(() => {
+//         x += xSpeed;
+//         if ((x + xSpeed) > 137) {
+//             // WE HIT THE WALL
+            
+//             x = 137;
+//             xSpeed = 0;
+//             if (rightReadyToPlay) {
+              
+//                 right[rightIdx].play();
+//                 rightIdx++;
+//                 if (rightIdx >= numSounds) {
+//                     rightIdx = 0;
+//                 }
+//                 rightReadyToPlay = false;
+//                 hitCount++;
+//                 if(hitCount> 6){
+//                   endShaking();
+//                   return
+//                 }
+            
+//             }
+//             leftReadyToPlay = true;
+
+
+//         } else if ((x + xSpeed) < -137) {
+//             // WE HIT THE WALL
+            
+//             x = -137;
+//             xSpeed = 0;
+//             if (leftReadyToPlay) {
+//                 left[leftIdx].play();
+//                 leftIdx++;
+              
+//                 if (leftIdx >= numSounds) {
+//                     leftIdx = 0;
+//                 }
+              
+//                 leftReadyToPlay = false;
+
+//               hitCount++;
+//               if(hitCount> 6){
+//                 endShaking();
+//                 return
+//               }
+//             }
+//             rightReadyToPlay = true;
+            
+//         }
+//         ppl.style.left = x + "px";
+//     }, 10)
+// }
 // console.log();
 
+
 function endShaking() {
+    let bm = document.querySelectorAll(".blurMsg");
+  
+    endSta = true;
     brek.play();
     clearInterval(shakeInterval);
-    setTimeout(()=>{
+    changeA();
+    setTimeout(() => {
 
         styleChange.appendChild(change1);
         styleChange.appendChild(change2);
@@ -157,18 +212,26 @@ function endShaking() {
         ppl.style.height = "0px";
         p3.style.transition = "all 2s";
         p3.style.opacity = "1";
-        cw.style.transition = "all 1s";
-        cw.style.filter = 'blur(0px)';
-      
+        // cw.style.transition = "all 2s";
+        // cw.style.filter = 'blur(0px)';
+        p3.style.pointerEvents = "auto";
+
         setTimeout(() => {
-            test.style.transition = "all 2s";
+            test.style.transition = "all 1.5s";
             test.style.height = "0px";
             room.style.display = "none";
-            abox.style.transition = "all 1s";
+            test.style.marginTop = "15vh";
+            p3.style.marginBottom = "30vh";
+            abox.style.transition = "all 2s";
             abox.style.width = "30px";
             abox.style.height = "30px";
-        }, 2000)
-    },1500)
+          
+    for (let i = 0; i < bm.length; i++) {
+        bm[i].style.transition = "all 2s";
+        bm[i].style.filter = 'blur(0px)';
+    }
+        }, 1500)
+    }, 1500)
 
 }
 
@@ -192,11 +255,52 @@ socket.on("incoming", (data) => {
     let message = data.message;
     let li = document.createElement("li");
     let p = document.createElement("p");
-    // p.innerHTML = "<img src='img/" + aNum + ".png' width=\"20px\" height=\"20px\">" + "<span class='sender'>" + " :</span> " + message;
-    p.innerHTML = "<img src='img/" + mark+ ".png' width=\"20px\" height=\"20px\">" + "<span class='sender'>" + " :</span> " + message;
-
+   if (endSta) {
+        // p.innerHTML = "<img src='img/" + aNum + ".png' width=\"20px\" height=\"20px\">" + "<span class='sender'>" + " :</span> " + message;
+        p.innerHTML = "<img src='img/" + aNum + ".png' width=\"20px\" height=\"20px\">" + "<span class='sender'>" + " :</span>" + message ;
+    } else {
+        p.innerHTML = "<img class='ava" + aNum + "' src='img/mark.png' width=\"20px\" height=\"20px\">" + "<span class='sender'>" + " :</span> " + "<span class='blurMsg'>" +message+ "</span> ";
+    }
     li.appendChild(p);
     chatbox.appendChild(li);
     chatbox.scrollTop = chatbox.scrollHeight;
+})
+
+function changeA() {
+    let a1 = document.querySelectorAll(".ava1");
+    let a2 = document.querySelectorAll(".ava2");
+    let a3 = document.querySelectorAll(".ava3");
+    let a4 = document.querySelectorAll(".ava4");
+    let a5 = document.querySelectorAll(".ava5");
+    let a6 = document.querySelectorAll(".ava6");
+
+    for (let i = 0; i < a1.length; i++) {
+        a1[i].src = "img/1.png";
+    }
+    for (let i = 0; i < a2.length; i++) {
+        a2[i].src = "img/2.png";
+    }
+    for (let i = 0; i < a3.length; i++) {
+        a3[i].src = "img/3.png";
+    }
+    for (let i = 0; i < a4.length; i++) {
+        a4[i].src = "img/4.png";
+    }
+    for (let i = 0; i < a5.length; i++) {
+        a5[i].src = "img/5.png";
+    }
+    for (let i = 0; i < a6.length; i++) {
+        a6[i].src = "img/6.png";
+    }
+
+
+
+}
+
+//https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+messagebox.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        sendbutton.click();
+    }
 })
 
